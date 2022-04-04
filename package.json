@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ."
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jmkl/hellonodejs/issues"
   },
-  "homepage": "https://github.com/jmkl/hellonodejs#readme"
+  "homepage": "https://github.com/jmkl/hellonodejs#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
