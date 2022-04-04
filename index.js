@@ -1,22 +1,9 @@
 const express = require('express');
+const request = require('./api/request')
 const app = express();
-const port = process.env.PORT || 80;
+const PORT = process.env.PORT || 5050;
+
+app.use("/api/request",request);
 
 
-app.get('/', (req, res) => {
-    res.sendFile('out.html', { root: __dirname });
-
-
-
-
-
-});
-app.get('/:keyword', (req, res) => {
-  
-})
-
-app.listen(port, () => {
-    console.log(`Now listening on port ${port}`);
-});
-
-
+app.listen(PORT,()=>console.log(`running on http://localhost:${PORT}`))
