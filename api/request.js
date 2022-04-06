@@ -13,10 +13,10 @@
      }catch(error){
         return res.status(500).send(JSON.stringify("Something went wrong :("));
      }
-     console.log(req.params["key"]);
+  
  });
  router.get("/:key",(req,res)=>{
-     res.json({status:200,message:"Yes"})
+     res.json({status:200,message:"xxx"})
  })
 
  module.exports = router;
