@@ -6,17 +6,19 @@ const app = express();
 const pug = require('pug');
 const PORT = process.env.PORT || 5050;
 
-const connectLivereload = require('connect-livereload');
 
 
 app.set("view engine",'pug');
-const livereload = require("livereload");
-const liveReloadServer = livereload.createServer();
-liveReloadServer.watch(path.join(__dirname,'public'));
-liveReloadServer.watch(path.join(__dirname,'api'));
 
- 
-app.use(connectLivereload());
+
+
+// const connectLivereload = require('connect-livereload');
+// const livereload = require("livereload");
+// const liveReloadServer = livereload.createServer();
+// liveReloadServer.watch(path.join(__dirname,'public'));
+// liveReloadServer.watch(path.join(__dirname,'api')); 
+// app.use(connectLivereload());
+
 app.get('/', (req, res) => {
     res.render('index', { title: 'Hedy', message: 'Hello there!' })
   })
@@ -26,8 +28,8 @@ app.get('/', (req, res) => {
 
 app.listen(PORT,()=>console.log(`running  on http://localhost:${PORT}`))
 
-liveReloadServer.server.once(("connection"),()=>{
-    setTimeout(()=>{
-        liveReloadServer.refresh("/")
-    },100);
-})
+// liveReloadServer.server.once(("connection"),()=>{
+//     setTimeout(()=>{
+//         liveReloadServer.refresh("/")
+//     },100);
+// })
