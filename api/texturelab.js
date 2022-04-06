@@ -8,6 +8,8 @@ const FormData = require('form-data');
 const fetch = require('node-fetch');
 const { response } = require("express");
 const download = require('image-downloader')
+const data = require("./data");
+
 
 const texturelab_url = "https://texturelabs.org/";
 /**
@@ -110,9 +112,11 @@ function downloadImage(imageurl, dirname, filename) {
 }
 
 router.get("/list/:key",(req,res)=>{
-    const result = "yes"
-    const datas = fs.readFileSync(path.dirname(__dirname)+"\\public\\texturelab.json");
-    const json = JSON.parse(datas);
+    // const result = "yes"
+    // const datas = fs.readFileSync(path.dirname(__dirname)+"\\public\\texturelab.json");
+    
+    
+    const json = data.getData();
     res.json({ status: 200, message: json })
     //res.render('index', { title: 'TextureLabs', message: JSON.stringify(json,false,2)})
 })
