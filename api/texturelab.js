@@ -163,6 +163,8 @@ router.get("/:key", async (req, res) => {
 
             res.render('index', { title: 'TextureLabs', message: json })
 
+        }else{
+            res.json({status:200,message:"hmm"})
         }
 
         //  res.render('index', { title: 'xx', message: JSON.stringify( await fetchTLab("?ct=19"),null,2)  })

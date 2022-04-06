@@ -10,8 +10,7 @@ const PORT = process.env.PORT || 5050;
 
 app.set("view engine",'pug');
 
-
-
+app.use(express.static('public'))
 // const connectLivereload = require('connect-livereload');
 // const livereload = require("livereload");
 // const liveReloadServer = livereload.createServer();
